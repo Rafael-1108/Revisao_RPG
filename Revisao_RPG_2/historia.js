@@ -9,7 +9,7 @@ let classe = 'mago';
 let vida = 200;
 let vidaMaxima = 270;
 let manaAtual = 0;
-let manaMaxima = 50;
+let manaMaxima = 500;
 
 const NOME_ARMA = 'Cajado de gelo';
 const DANO_BASE = 23;
@@ -78,20 +78,41 @@ console.log('O herói da classe ' ,classe, ' está prestes a enfrentar novos ini
 console.log('...' );
 console.log('Capítulo 1 - Magia em ação.');
 console.log('');
-
-if (classe === 'mago') {
-    console.log('Você foi desafiado para participar de um desafio mágico');
-} else if (classe === 'guerreiro') {
-    console.log('Um desafio surge, porém ele não comtempla a sua classe. Prossiga!');
-} else {
-    console.log('Um desafio surge, porém ele não comtempla a sua classe. Prossiga!');
-}
+console.log('Você foi desafiado para participar de um desafio mágico');
 
 if (classe === 'mago') {
     console.log('Este desafio te oferece 50 de mana caso você o vença');
-    console.log('Você devera acertar alvos com o ',NOME_ARMA);
+    console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
     if (nivel >= 10){
         console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
-
+    manaAtual+= 50;
+    } else {
+        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Treine mais.');
     }
 }
+
+if (classe === 'paladino') {
+    console.log('Este desafio te oferece 40 de mana caso você o vença');
+    console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
+    if (nivel >= 10){
+        console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
+    manaAtual+= 40;
+    } else {
+        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Treine mais.');
+    }
+}
+
+if (classe === 'guerreiro') {
+    console.log('Este desafio te oferece 35 de mana caso você o vença');
+    console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
+    if (nivel >= 10){
+        console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
+    manaAtual+= 35;
+    } else {
+        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Treine mais.');
+    }
+}
+
+console.log('')
+console.log('Capítulo 2 - Destreza em batalhas')
+console.log('')
