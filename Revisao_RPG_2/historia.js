@@ -76,6 +76,9 @@ console.log('Pode enfrentar o Guardião? ',podeEnfrentarGuardiao, ' a batalha fi
 console.log('Após sua última batalha  ',nome, ' decide partir sua jornada rumo à batalha final contra o guardião.');
 console.log('O herói da classe ' ,classe, ' está prestes a enfrentar novos inimigos e tomar suas próprias decisões.' );
 console.log('...' );
+
+//Capítulo 1 - Magia em Ação
+
 console.log('Capítulo 1 - Magia em ação.');
 console.log('');
 console.log('Você foi desafiado para participar de um desafio mágico');
@@ -113,6 +116,9 @@ if (classe === 'guerreiro') {
     }
 }
 
+//Capítulo 2 - Força Total
+
 console.log('')
-console.log('Capítulo 2 - Destreza em batalhas')
+console.log('Capítulo 2 - Força Total')
 console.log('')
+
