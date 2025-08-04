@@ -121,4 +121,6 @@ if (classe === 'guerreiro') {
 console.log('')
 console.log('Capítulo 2 - Força Total')
 console.log('')
+console.log('Após uma longa caminhada, ',nome, ' chega até o castelo ')
 
+console.log('Com ',ouro, ' de moedas ',nome, ' decide comprar uma poção de mana')
