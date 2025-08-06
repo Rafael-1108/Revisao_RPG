@@ -20,9 +20,9 @@ let ataqueTotal = 0;
 let defesaTotal = 0;
 let agilidade = 10;
 let combatesVencidos = 1;
-//O personagem treinou e ganhou 150 pontos de experiência
+//O personagem treinou e ganhou 50 pontos de experiência
 
-xp+= 150;
+xp+= 50;
 
 //Com o xp adquirido o personagem sobe 2 níveis
 
@@ -58,16 +58,16 @@ let nivelAvancado = nivel >= 20;
 let podeEnfrentarGuardiao = vidaSulficiente && (ataqueForte || nivelAvancado);
 
 console.log('🧾 LORE DO HERÓI: ' , nome);
-console.log('-----------------------');
+console.log('');
 console.log(nome, 'Inicia uma caminhada de rotina');
 console.log('No meio do caminho ',nome, ' deixa cair 100 moedas, ficando com ',ouro, ' moedas');
 console.log('Ao voltar para procurar, o personagem se depara com um ladrão que tenta roubar suas moedas e trava uma batalha para impedi-lo');
 console.log('O openente de ',nome, ' possui 60 pontos de vida e é atacado por ' ,nome, ' que causa ' ,ataqueTotal, ' pontos de dano' );
-console.log('Seu oponente morre, já que ',nome, ' é forte demais e o nível de poder aumenta para',nivel,);
+console.log('Seu oponente morre, já que ',nome, ' é forte demais e o nível aumenta para',nivel,);
 console.log('Após a batalha, ',nome, ' pisa em espinhos e perde 80 de vida, ficando com ',vida, ' pontos de vida');
 console.log('Por isso, decide comprar uma poção que lhe faz gastar ',ouroPocao, ' de ouro, restando ',ouroPosPocaoComprada, ' de ouro');
 console.log('Vida suficiente? ' ,vidaSulficiente, '| Ataque forte? ' ,ataqueForte, '| Nível avançado? ' ,nivelAvancado);
-console.log('Pode enfrentar o Guardião? ',podeEnfrentarGuardiao, ' a batalha final está próxima');
+console.log('Pode enfrentar o Guardião? ',podeEnfrentarGuardiao, '. A batalha final se aproxima!');
 
 //Nível 2 - contiuação 
 
@@ -90,7 +90,7 @@ if (classe === 'mago') {
         console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
     manaAtual+= 50;
     } else {
-        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Treine mais.');
+        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Mas não desanime, siga em frente treinando cada vez mais!');
     }
 }
 
@@ -98,10 +98,10 @@ if (classe === 'paladino') {
     console.log('Este desafio te oferece 40 de mana caso você o vença');
     console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
     if (nivel >= 10){
-        console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
+        console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 40 de mana');
     manaAtual+= 40;
     } else {
-        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Treine mais.');
+        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Mas não desanime, siga em frente treinando cada vez mais!');
     }
 }
 
@@ -109,10 +109,10 @@ if (classe === 'guerreiro') {
     console.log('Este desafio te oferece 35 de mana caso você o vença');
     console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
     if (nivel >= 10){
-        console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
+        console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 35 de mana');
     manaAtual+= 35;
     } else {
-        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Treine mais.');
+        console.log('Seu nível ainda é baixo. Você não foi capaz de vencer o desafio. Mas não desanime, siga em frente treinando cada vez mais!');
     }
 }
 
@@ -121,6 +121,43 @@ if (classe === 'guerreiro') {
 console.log('')
 console.log('Capítulo 2 - Força Total')
 console.log('')
-console.log('Após uma longa caminhada, ',nome, ' chega até o castelo ')
 
-console.log('Com ',ouro, ' de moedas ',nome, ' decide comprar uma poção de mana')
+if (classe === 'paladino') {
+    console.log('"Parabéns pela sua jornada atual, sua ambição pela justiça e sua honra te farão ir longe."');
+    console.log('"Você acumulou experiência sulficiente para elevar seu nível:"');
+    xp+= 200;
+    nivel+= 2;
+    console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
+}
+
+if (classe === 'mago') {
+    console.log('"Parabéns pela sua jornada atual, seu espírito mágico e sua honra te farão ir longe."');
+    console.log('"Você acumulou experiência sulficiente para elevar seu nível:"');
+    xp+= 200;
+    nivel+= 2;
+    console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
+}
+
+if (classe === 'guerreiro') {
+    console.log('"Parabéns pela sua jornada atual, seu espírito de luta e sua honra te farão ir longe."');
+    console.log('"Você acumulou experiência sulficiente para elevar seu nível:"');
+    xp+= 200;
+    nivel+= 2;
+    console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
+}
+
+console.log('');
+console.log('Após uma longa caminhada, ',nome, ' chega até o castelo negro.');
+console.log('O castelo negro é o lugar onde todos os aventureiros são provados com batalhas épicas com um único objetivo... ');
+console.log('Conseguir a tão sonhada Chave Dourada, capaz de abrir o baú do encantamento, assim elevando ao máximo o poder de batalha do aventureiro.');
+console.log('')
+console.log('Para chegar ao topo, seria preciso vencer um oponente de cada classe. Sendo um mago, um paladino e um guerreiro, que habitavam o lugar para testar os conhecimentos de cada aventureiro.')
+console.log('Após longas e árduas batalhas, ',nome, 'vence todos os seus 3 oponentes e finalmente conquista a Chave Dourada.');
+
+nivel+= 4;
+xp+=300;
+vida-= 100;
+ouro+= 25 * 3
+
+console.log('Derrotando seus oponentes,',nome,' ganha 300 de xp, sobe 4 níveis e recebe 25 moedas de cada oponente como recompensa. Mas acaba machucado, perdendo 100 pontos de vida. Ficando com',vida, 'de vida,',ouro, 'moedas, chegando no nível',nivel, 'e acumulando',xp, 'de experiência.');
+console.log('E agora sim',nome, '')
