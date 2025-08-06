@@ -50,42 +50,51 @@ defesaTotal = DEFESA_BASE + (nivel / 2);
 //Comprou uma poção por 30 moedas de ouro
 
 let ouroPocao = 30;
-let ouroPosPocaoComprada = ouro - ouroPocao;
 
 let vidaSulficiente = vida > 150;
 let ataqueForte = ataqueTotal > 120;
 let nivelAvancado = nivel >= 20;
 let podeEnfrentarGuardiao = vidaSulficiente && (ataqueForte || nivelAvancado);
 
-console.log('🧾 LORE DO HERÓI: ' , nome);
+console.log('🧾 LORE DO HERÓI:', nome);
 console.log('');
-console.log(nome, 'Inicia uma caminhada de rotina');
-console.log('No meio do caminho ',nome, ' deixa cair 100 moedas, ficando com ',ouro, ' moedas');
+console.log(nome,'inicia uma caminhada de rotina');
+console.log('No meio do caminho',nome, 'deixa cair 100 moedas, ficando com ',ouro, 'moedas');
 console.log('Ao voltar para procurar, o personagem se depara com um ladrão que tenta roubar suas moedas e trava uma batalha para impedi-lo');
-console.log('O openente de ',nome, ' possui 60 pontos de vida e é atacado por ' ,nome, ' que causa ' ,ataqueTotal, ' pontos de dano' );
-console.log('Seu oponente morre, já que ',nome, ' é forte demais e o nível aumenta para',nivel,);
-console.log('Após a batalha, ',nome, ' pisa em espinhos e perde 80 de vida, ficando com ',vida, ' pontos de vida');
-console.log('Por isso, decide comprar uma poção que lhe faz gastar ',ouroPocao, ' de ouro, restando ',ouroPosPocaoComprada, ' de ouro');
-console.log('Vida suficiente? ' ,vidaSulficiente, '| Ataque forte? ' ,ataqueForte, '| Nível avançado? ' ,nivelAvancado);
-console.log('Pode enfrentar o Guardião? ',podeEnfrentarGuardiao, '. A batalha final se aproxima!');
+console.log('O openente de',nome, 'possui 60 pontos de vida e é atacado por' ,nome, 'que causa' ,ataqueTotal, 'pontos de dano' );
+console.log('Seu oponente morre, já que',nome, 'é forte demais e o nível aumenta para',nivel,);
+console.log('Após a batalha,',nome, 'pisa em espinhos e perde 80 de vida, ficando com',vida, 'pontos de vida');
+
+//Usou a poção e recuperou 40 pontos de vida
+
+vida+= 40;
+
+//Comprou uma poção por 30 moedas 
+
+ouro-= ouroPocao
+
+console.log('Por isso, decide comprar uma poção que lhe faz gastar',ouroPocao, 'moedas, restando',ouro, 'moedas e regnerando 40 pontos de vida, ficando com',vida, 'pontos de vida.');
+console.log('Vida suficiente?' ,vidaSulficiente, '| Ataque forte?' ,ataqueForte, '| Nível avançado?' ,nivelAvancado);
+console.log(`Pode enfrentar o Guardião? ${podeEnfrentarGuardiao}. A batalha final se aproxima!`);
 
 //Nível 2 - contiuação 
 
 //prólogo 
 
-console.log('Após sua última batalha  ',nome, ' decide partir sua jornada rumo à batalha final contra o guardião.');
-console.log('O herói da classe ' ,classe, ' está prestes a enfrentar novos inimigos e tomar suas próprias decisões.' );
-console.log('...' );
+console.log('Após sua última batalha,',nome, 'decide partir sua jornada rumo à batalha final contra o guardião.');
+console.log('O herói da classe' ,classe, 'está prestes a enfrentar novos inimigos e tomar suas próprias decisões.');
+console.log('...');
 
 //Capítulo 1 - Magia em Ação
 
+console.log('')
 console.log('Capítulo 1 - Magia em ação.');
 console.log('');
 console.log('Você foi desafiado para participar de um desafio mágico');
 
 if (classe === 'mago') {
     console.log('Este desafio te oferece 50 de mana caso você o vença');
-    console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
+    console.log('Você devera acertar alvos com o/a',NOME_ARMA);
     if (nivel >= 10){
         console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 50 de mana');
     manaAtual+= 50;
@@ -96,7 +105,7 @@ if (classe === 'mago') {
 
 if (classe === 'paladino') {
     console.log('Este desafio te oferece 40 de mana caso você o vença');
-    console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
+    console.log('Você devera acertar alvos com o/a',NOME_ARMA);
     if (nivel >= 10){
         console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 40 de mana');
     manaAtual+= 40;
@@ -107,7 +116,7 @@ if (classe === 'paladino') {
 
 if (classe === 'guerreiro') {
     console.log('Este desafio te oferece 35 de mana caso você o vença');
-    console.log('Você devera acertar alvos com o/a ',NOME_ARMA);
+    console.log('Você devera acertar alvos com o/a',NOME_ARMA);
     if (nivel >= 10){
         console.log('Seu nível te entrega uma ótima habilidade. Parabéns você acaba de acertar todos os alvos e recebe 35 de mana');
     manaAtual+= 35;
@@ -127,7 +136,7 @@ if (classe === 'paladino') {
     console.log('"Você acumulou experiência sulficiente para elevar seu nível:"');
     xp+= 200;
     nivel+= 2;
-    console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
+    console.log(`xp +200 = ${xp}. Nível +2 = ${nivel}`);
 }
 
 if (classe === 'mago') {
@@ -135,7 +144,7 @@ if (classe === 'mago') {
     console.log('"Você acumulou experiência sulficiente para elevar seu nível:"');
     xp+= 200;
     nivel+= 2;
-    console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
+    console.log(`xp: +200 = ${xp}. Nível +2 = ${nivel}`);
 }
 
 if (classe === 'guerreiro') {
@@ -143,25 +152,28 @@ if (classe === 'guerreiro') {
     console.log('"Você acumulou experiência sulficiente para elevar seu nível:"');
     xp+= 200;
     nivel+= 2;
-    console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
+    console.log(`xp: +200 = ${xp}. Nível +2 = ${nivel}`);
 }
 
 //castelo negro
 
 console.log('');
-console.log('Após uma longa caminhada, ',nome, ' chega até o castelo negro.');
+console.log('Após uma longa caminhada,',nome, 'chega até o castelo negro.');
 console.log('O castelo negro é o lugar onde todos os aventureiros são provados com batalhas épicas com um único objetivo... ');
 console.log('Conseguir a tão sonhada Chave Dourada, capaz de abrir o baú do encantamento, assim elevando ao máximo o poder de batalha do aventureiro.');
 console.log('')
 console.log('Para chegar ao topo, seria preciso vencer um oponente de cada classe. Sendo um mago, um paladino e um guerreiro, que habitavam o lugar para testar os conhecimentos de cada aventureiro.')
-console.log('Após longas e árduas batalhas, ',nome, 'vence todos os seus 3 oponentes e finalmente conquista a Chave Dourada.');
+console.log('Após longas e árduas batalhas,',nome, 'vence todos os seus 3 oponentes e finalmente conquista a Chave Dourada.');
 
 nivel+= 4;
 xp+=300;
-vida-= 100;
+vida-= 110;
 ouro+= 25 * 3
 
-console.log('Derrotando seus oponentes,',nome,' ganha 300 de xp, sobe 4 níveis e recebe 25 moedas de cada oponente como recompensa. Mas acaba machucado, perdendo 100 pontos de vida. Ficando com',vida, 'de vida,',ouro, 'moedas, chegando no nível',nivel, 'e acumulando',xp, 'de experiência.');
+console.log('Derrotando seus oponentes,',nome, 'ganha 300 de xp, sobe 4 níveis e recebe 25 moedas de cada oponente como recompensa. Mas acaba machucado, perdendo 110 pontos de vida. Ficando com',vida, 'de vida,',ouro, 'moedas, chegando no nível',nivel, 'e acumulando',xp, 'de experiência.');
 console.log('E agora sim',nome, 'pode seguir em frente, para encantar sua/seu',NOME_ARMA);
 
 //capítulo 3 - Missão de encantamento
+
+console.log('');
+console.log('Capítulo 3 - Missão de encantamento');
