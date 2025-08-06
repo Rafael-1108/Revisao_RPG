@@ -146,6 +146,8 @@ if (classe === 'guerreiro') {
     console.log('xp: +200 = ',xp, '. Nível +2 = ',nivel);
 }
 
+//castelo negro
+
 console.log('');
 console.log('Após uma longa caminhada, ',nome, ' chega até o castelo negro.');
 console.log('O castelo negro é o lugar onde todos os aventureiros são provados com batalhas épicas com um único objetivo... ');
@@ -160,4 +162,6 @@ vida-= 100;
 ouro+= 25 * 3
 
 console.log('Derrotando seus oponentes,',nome,' ganha 300 de xp, sobe 4 níveis e recebe 25 moedas de cada oponente como recompensa. Mas acaba machucado, perdendo 100 pontos de vida. Ficando com',vida, 'de vida,',ouro, 'moedas, chegando no nível',nivel, 'e acumulando',xp, 'de experiência.');
-console.log('E agora sim',nome, '')
+console.log('E agora sim',nome, 'pode seguir em frente, para encantar sua/seu',NOME_ARMA);
+
+//capítulo 3 - Missão de encantamento
