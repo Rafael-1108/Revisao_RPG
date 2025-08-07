@@ -51,6 +51,11 @@ defesaTotal = DEFESA_BASE + (nivel / 2);
 
 let ouroPocao = 30;
 
+let vidaSuficiente = vida > 150;
+let ataqueForte = ataqueTotal > 120;
+let nivelAvancado = nivel >= 20;
+let podeEnfrentarGuardiao = vidaSuficiente && (ataqueForte || nivelAvancado);
+
 console.log('🧾 LORE DO HERÓI:', nome);
 console.log('');
 console.log(nome,'inicia uma caminhada de rotina');
@@ -191,3 +196,5 @@ xp+= 550
 console.log('Nível:',nivel, '| Xp:',xp, '| Ataque:',ataqueTotal, '| Defesa:',defesaTotal);
 console.log('');
 console.log('O próximo passo agora é o desafio final, onde',nome, 'enfrenta o guardião...');
+console.log('');
+console.log('Desafio Final');
