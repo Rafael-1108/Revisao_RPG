@@ -51,11 +51,6 @@ defesaTotal = DEFESA_BASE + (nivel / 2);
 
 let ouroPocao = 30;
 
-let vidaSulficiente = vida > 150;
-let ataqueForte = ataqueTotal > 120;
-let nivelAvancado = nivel >= 20;
-let podeEnfrentarGuardiao = vidaSulficiente && (ataqueForte || nivelAvancado);
-
 console.log('🧾 LORE DO HERÓI:', nome);
 console.log('');
 console.log(nome,'inicia uma caminhada de rotina');
@@ -73,8 +68,8 @@ vida+= 40;
 
 ouro-= ouroPocao
 
-console.log('Por isso, decide comprar uma poção que lhe faz gastar',ouroPocao, 'moedas, restando',ouro, 'moedas e regnerando 40 pontos de vida, ficando com',vida, 'pontos de vida.');
-console.log('Vida suficiente?' ,vidaSulficiente, '| Ataque forte?' ,ataqueForte, '| Nível avançado?' ,nivelAvancado);
+console.log('Por isso, decide comprar uma poção que lhe faz gastar',ouroPocao, 'moedas, restando',ouro, 'moedas e regenerando 40 pontos de vida, ficando com',vida, 'pontos de vida.');
+console.log('Vida suficiente?' ,vidaSuficiente, '| Ataque forte?' ,ataqueForte, '| Nível avançado?' ,nivelAvancado);
 console.log(`Pode enfrentar o Guardião? ${podeEnfrentarGuardiao}. A batalha final se aproxima!`);
 
 //Nível 2 - contiuação 
@@ -160,15 +155,16 @@ if (classe === 'guerreiro') {
 console.log('');
 console.log('Após uma longa caminhada,',nome, 'chega até o castelo negro.');
 console.log('O castelo negro é o lugar onde todos os aventureiros são provados com batalhas épicas com um único objetivo... ');
-console.log('Conseguir a tão sonhada Chave Dourada, capaz de abrir o baú do encantamento, assim elevando ao máximo o poder de batalha do aventureiro.');
+console.log('Conseguir o tão sonhado Livro do Encantamento, capaz de elevar ao máximo o poder de batalha do aventureiro.');
 console.log('')
 console.log('Para chegar ao topo, seria preciso vencer um oponente de cada classe. Sendo um mago, um paladino e um guerreiro, que habitavam o lugar para testar os conhecimentos de cada aventureiro.')
-console.log('Após longas e árduas batalhas,',nome, 'vence todos os seus 3 oponentes e finalmente conquista a Chave Dourada.');
+console.log('Após longas e árduas batalhas,',nome, 'vence todos os seus 3 oponentes e finalmente conquista o Livro do Encantamento.');
 
 nivel+= 4;
 xp+=300;
 vida-= 110;
 ouro+= 25 * 3
+combatesVencidos+= 3
 
 console.log('Derrotando seus oponentes,',nome, 'ganha 300 de xp, sobe 4 níveis e recebe 25 moedas de cada oponente como recompensa. Mas acaba machucado, perdendo 110 pontos de vida. Ficando com',vida, 'de vida,',ouro, 'moedas, chegando no nível',nivel, 'e acumulando',xp, 'de experiência.');
 console.log('E agora sim',nome, 'pode seguir em frente, para encantar sua/seu',NOME_ARMA);
@@ -177,3 +173,21 @@ console.log('E agora sim',nome, 'pode seguir em frente, para encantar sua/seu',N
 
 console.log('');
 console.log('Capítulo 3 - Missão de encantamento');
+console.log('');
+console.log('Após conquistar o Livro do Encantamento,',nome, 'segue até o Santuário dos Encantamentos.');
+console.log('Ao pisar seus pés no local, sua armadura equipada:',NOME_ARMADURA, 'também recebe um poder ancestral, que aumenta sua defesa em 11 pontos.');
+console.log('Lá, ele ergue seu',NOME_ARMA, 'em direção à luz ancestral.');
+console.log('A arma brilha intensamente, absorvendo a energia mágica do livro.');
+console.log(nome, 'agora empunha um(a)',NOME_ARMA, 'encantado(a), com poder ampliado!');
+
+defesaTotal+= 11;
+
+console.log('Com isso,',nome, 'eleva seu nível em 4 pontos, seu ataque em 20 pontos e recebe 550 de xp.');
+
+nivel+= 4;
+ataqueTotal+= 20
+xp+= 550
+
+console.log('Nível:',nivel, '| Xp:',xp, '| Ataque:',ataqueTotal, '| Defesa:',defesaTotal);
+console.log('');
+console.log('O próximo passo agora é o desafio final, onde',nome, 'enfrenta o guardião...');
