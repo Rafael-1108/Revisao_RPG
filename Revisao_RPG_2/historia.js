@@ -92,6 +92,8 @@ console.log('Capítulo 1 - Magia em ação.');
 console.log('');
 console.log('Você foi desafiado para participar de um desafio mágico');
 
+//definindo a mana que cada classe receberá no desafio
+
 if (classe === 'mago') {
     console.log('Este desafio te oferece 50 de mana caso você o vença');
     console.log('Você devera acertar alvos com o/a',NOME_ARMA);
@@ -127,9 +129,11 @@ if (classe === 'guerreiro') {
 
 //Capítulo 2 - Força Total
 
-console.log('')
-console.log('Capítulo 2 - Força Total')
-console.log('')
+console.log('');
+console.log('Capítulo 2 - Força Total');
+console.log('');
+
+//personagem recebendo xp e aumentando seu nível pelo progresso atual ao treminar o primeiro capítulo
 
 if (classe === 'paladino') {
     console.log('"Parabéns pela sua jornada atual, sua ambição pela justiça e sua honra te farão ir longe."');
@@ -155,7 +159,7 @@ if (classe === 'guerreiro') {
     console.log(`xp: +200 = ${xp}. Nível +2 = ${nivel}`);
 }
 
-//castelo negro
+//história
 
 console.log('');
 console.log('Após uma longa caminhada,',nome, 'chega até o castelo negro.');
@@ -165,11 +169,15 @@ console.log('')
 console.log('Para chegar ao topo, seria preciso vencer um oponente de cada classe. Sendo um mago, um paladino e um guerreiro, que habitavam o lugar para testar os conhecimentos de cada aventureiro.')
 console.log('Após longas e árduas batalhas,',nome, 'vence todos os seus 3 oponentes e finalmente conquista o Livro do Encantamento.');
 
+//Atributos aumentados
+
 nivel+= 4;
 xp+=300;
 vida-= 110;
 ouro+= 25 * 3
 combatesVencidos+= 3
+
+//Atributos sendo exibidos no console abaixo
 
 console.log('Derrotando seus oponentes,',nome, 'ganha 300 de xp, sobe 4 níveis e recebe 25 moedas de cada oponente como recompensa. Mas acaba machucado, perdendo 110 pontos de vida. Ficando com',vida, 'de vida,',ouro, 'moedas, chegando no nível',nivel, 'e acumulando',xp, 'de experiência.');
 console.log('E agora sim',nome, 'pode seguir em frente, para encantar sua/seu',NOME_ARMA);
@@ -189,6 +197,8 @@ defesaTotal+= 11;
 
 console.log('Com isso,',nome, 'eleva seu nível em 4 pontos, seu ataque em 20 pontos e recebe 550 de xp.');
 
+//Atributos aumentados
+
 nivel+= 4;
 ataqueTotal+= 20
 xp+= 550
@@ -197,4 +207,49 @@ console.log('Nível:',nivel, '| Xp:',xp, '| Ataque:',ataqueTotal, '| Defesa:',de
 console.log('');
 console.log('O próximo passo agora é o desafio final, onde',nome, 'enfrenta o guardião...');
 console.log('');
-console.log('Desafio Final');
+console.log('Desafio Final - A luta contra o guradião');
+console.log('');
+  
+vidaSuficiente = vida > 150;
+
+//Comprando a quantidade necessária de poções para a batalha final 
+
+if (vidaSuficiente === true) {
+    console.log(nome, 'está com a saúde boa.');
+} else if (vida < 40) {
+    console.log(nome, 'comprou e usou 4 poções básicas, que recuperam 40 pontos de vida cada, gastou 15 moedas em cada uma delas');
+    ouro-= 15*4;
+    vida+= 160
+} else if (vida < 80) {
+    console.log(nome, 'comprou e usou 3 poções básicas, que recuperam 40 pontos de vida cada, gastou 15 moedas em cada uma delas');
+    ouro-= 15*3;
+    vida+= 120;
+} else if (vida < 120) {
+    console.log(nome, 'comprou e usou 2 poções básicas, que recuperam 40 pontos de vida cada, gastou 15 moedas em cada uma delas');
+    ouro-= 15*2;
+    vida+= 80;
+} else {
+    console.log(nome, 'comprou e usou 1 poção básica, que recuperam 40 pontos de vida cada, gastou 15 moedas em cada uma delas');
+    ouro-= 15*1;
+    vida+= 40;
+}
+console.log('Vida atual:', vida);
+
+//analisando novamente as variáveis boleanas
+
+ataqueForte = ataqueTotal > 120;
+nivelAvancado = nivel >= 20;
+vidaSuficiente = vida > 150;
+podeEnfrentarGuardiao = vidaSuficiente && (ataqueForte || nivelAvancado);
+
+//exibindo no console se o personagem pode enfrentar o guardião
+
+if (podeEnfrentarGuardiao === true) {
+    console.log(nome, 'já pode batalhar contra o guardião.');
+} else {
+    console.log(nome, 'não tinha nível ou ataque sulficiente para enfrentar o guardião, portanto treinou mais e alcançou o nível necessário.');
+    nivel+= 20- nivel;
+    console.log('Agora sim você enfrentará o guardião!');
+}
+
+//Fim do nível 2 - batalha final acontecerá no nível 3
