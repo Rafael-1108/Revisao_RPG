@@ -269,9 +269,11 @@ tesouros.push('Capa da Invisibilidade');
 
 //Narrativa
 
+console.log('');
 console.log('Capítulo Final - A Última jornada de', nome);
+console.log('');
 console.log(nome, 'com seus aliados', aliados, 'agora com nível', nivel, 'caminha para o Templo Sombrio');
-console.log(`Chegando ao local, o(a) aliado(a) de ${nome} chamado(a) ${aliados[aliados.length -2]} avista de longe o maior inimigo de ${nome}, o destemido ${inimigos[0]}`);
+console.log(`Chegando ao local, o(a) aliado(a) de ${nome} chamado(a) ${aliados[aliados.length -2]} avista de longe o maior inimigo de ${nome}, o destemido ${inimigos[0]}.`);
 console.log(nome, 'diz que seria dever dele derrotar o seu inimigo, por isso pedio que a batalha fosse no estilo um contra um.');
 console.log('Ele então utiliza sua arma', NOME_ARMA, 'e o item', inventario[inventario.length -1], 'para começar com tudo!');
 
@@ -281,3 +283,23 @@ for (const aliado of aliados) {
     console.log(`${aliado}: "Você consegue, ${nome}! Mostre do que é capaz!`);
 }
 
+console.log('');
+
+//Variáveis para o inimigo
+
+let vidaGuardiao = 480;
+let turnos = 0;
+
+//Batalha com for
+
+for (let i = 0; vida > 0 && vidaGuardiao > 0; i++) {
+    let danoCausado = ataqueTotal - Math.floor(Math.random() * 10);
+    let danoRecebido = 40 - Math.floor(defesaTotal / 3);
+
+    vidaGuardiao -= danoCausado;
+    vida -= danoRecebido;
+
+    console.log(`Rodada ${i}: ${nome} causa ${danoCausado} de dano e recebe ${danoRecebido} de dano.`);
+    console.log(`Vida do herói: ${vida}. Vida do inimigo: ${vidaGuardiao}`);
+    console.log('');
+}
