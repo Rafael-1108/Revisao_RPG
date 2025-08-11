@@ -258,7 +258,7 @@ if (podeEnfrentarGuardiao === true) {
 
 let inventario = ['Poção de Cura', 'Cristal da Alma'];
 let aliados = ['Elfa Lyna'];
-let inimigos = ['Guardião Sombrio', 'Mestre das Sombras'];
+let inimigos = ['Guardião Sombrio'];
 let tesouros = ['Anel da Fúria', 'Elixir Negro'];
 
 //Adicionando elementos 
@@ -266,3 +266,18 @@ let tesouros = ['Anel da Fúria', 'Elixir Negro'];
 inventario.push('Espada de Luz');
 aliados.push('Príncipe Real');
 tesouros.push('Capa da Invisibilidade');
+
+//Narrativa
+
+console.log('Capítulo Final - A Última jornada de', nome);
+console.log(nome, 'com seus aliados', aliados, 'agora com nível', nivel, 'caminha para o Templo Sombrio');
+console.log('Chegando ao local, o(a) aliado(a) de', nome, 'chamado(a)', aliados[aliados.length -2], 'avista de longe o maior inimigo de', nome);
+console.log(nome, 'diz que seria dever dele derrotar o seu inimigo, por isso pedio que a batalha fosse no estilo um contra um.');
+console.log('Ele então utiliza sua arma', NOME_ARMA, 'e o item', inventario[inventario.length -1], 'para começar com tudo!');
+
+//Aliados incentivando (for...of)
+
+for (const aliado of aliados) {
+    console.log(`${aliado}: "Você consegue, ${nome}! Mostre do que é capaz!`);
+}
+
