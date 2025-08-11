@@ -319,6 +319,8 @@ if (vidaGuardiao <= 0 && vida > 0) {
 //Status finais
 
 console.log('');
+console.log('Status Finais:');
+console.log('');
 console.log('Vida:', vida);
 console.log('Ataque:', ataqueTotal);
 console.log('Defesa:', defesaTotal);
