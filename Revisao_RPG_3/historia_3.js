@@ -301,7 +301,7 @@ for (let i = 0; vida > 0 && vidaGuardiao > 0; i++) {
     vidaGuardiao -= danoCausado;
     vida -= danoRecebido;
 
-    console.log(`Rodada ${i}: ${nome} causa ${danoCausado} de dano e recebe ${danoRecebido} de dano.`);
+    console.log(`Rodada ${i + 1}: ${nome} causa ${danoCausado} de dano e recebe ${danoRecebido} de dano.`);
     console.log(`Vida do herói: ${vida}. Vida do inimigo: ${vidaGuardiao}`);
     console.log('');
 }
