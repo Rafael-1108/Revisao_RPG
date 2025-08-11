@@ -271,7 +271,7 @@ tesouros.push('Capa da Invisibilidade');
 
 console.log('Capítulo Final - A Última jornada de', nome);
 console.log(nome, 'com seus aliados', aliados, 'agora com nível', nivel, 'caminha para o Templo Sombrio');
-console.log('Chegando ao local, o(a) aliado(a) de', nome, 'chamado(a)', aliados[aliados.length -2], 'avista de longe o maior inimigo de', nome);
+console.log(`Chegando ao local, o(a) aliado(a) de ${nome} chamado(a) ${aliados[aliados.length -2]} avista de longe o maior inimigo de ${nome}, o destemido ${inimigos[0]}`);
 console.log(nome, 'diz que seria dever dele derrotar o seu inimigo, por isso pedio que a batalha fosse no estilo um contra um.');
 console.log('Ele então utiliza sua arma', NOME_ARMA, 'e o item', inventario[inventario.length -1], 'para começar com tudo!');
 
