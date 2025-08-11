@@ -277,6 +277,8 @@ console.log(`Chegando ao local, o(a) aliado(a) de ${nome} chamado(a) ${aliados[a
 console.log(nome, 'diz que seria dever dele derrotar o seu inimigo, por isso pedio que a batalha fosse no estilo um contra um.');
 console.log('Ele então utiliza sua arma', NOME_ARMA, 'e o item', inventario[inventario.length -1], 'para começar com tudo!');
 
+inventario.pop(inventario.length -1);
+
 //Aliados incentivando (for...of)
 
 for (const aliado of aliados) {
@@ -294,7 +296,7 @@ let turnos = 0;
 
 for (let i = 0; vida > 0 && vidaGuardiao > 0; i++) {
     let danoCausado = ataqueTotal - Math.floor(Math.random() * 10);
-    let danoRecebido = 40 - Math.floor(defesaTotal / 3);
+    let danoRecebido = 45 - Math.floor(defesaTotal / 3);
 
     vidaGuardiao -= danoCausado;
     vida -= danoRecebido;
@@ -303,3 +305,29 @@ for (let i = 0; vida > 0 && vidaGuardiao > 0; i++) {
     console.log(`Vida do herói: ${vida}. Vida do inimigo: ${vidaGuardiao}`);
     console.log('');
 }
+
+//Definindo o vencedor
+
+if (vidaGuardiao <= 0 && vida > 0) {
+    console.log('Após uma longa jornada', nome, 'derrota', inimigos[0], 'e sai vitorioso!');
+} else if (vidaGuardiao <= 0 && vida <= 0) {
+    console.log(nome, 'e' , inimigos[0], 'possuem um poder equivalente, portanto', nome, 'acaba com seu oponente mas também acaba derrotado, esse empate marca o fim da história lendária de' , nome);
+} else {
+    console.log(nome, 'lutou como nunca, mas após uma batalha árdua nosso herói foi de arrasta pra cima. A lendária jornada de' , nome, 'ficará marcada para sempre no coração de todos! F');
+}
+
+//Status finais
+
+console.log('');
+console.log('Vida:', vida);
+console.log('Ataque:', ataqueTotal);
+console.log('Defesa:', defesaTotal);
+console.log('Oponentes derrotados:', combatesVencidos);
+console.log('Ouro:', ouro);
+console.log('Mana:', manaAtual);
+console.log('Aliados:', aliados);
+console.log('Inventário:', inventario);
+console.log('XP:', xp);
+console.log('Nível:', nivel);
+console.log('Agilidade:', agilidade);
+console.log('Classe:', classe);
